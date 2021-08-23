@@ -1,0 +1,43 @@
+
+		     <div class="main-page login-page " style = "margin-top: 60px; margin-bottom:70px">
+				<h2 class="title1">Login</h2>
+				<div class="widget-shadow">
+					<div class="login-body">
+					
+					    {{#if hasErrors}}
+			                 <div class = "alert alert-danger" alert-dismissable style = "border-radius:4px;"> 
+				        {{#each messages}}
+					              <p><button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true"><i class = "lnr lnr-cross-circle"></i></button>
+				                  <i class= "lnr lnr-warning"></i> {{this}}.</p>
+					    {{/each}}
+				              </div> 
+			            {{/if}}
+			 
+			  {{#if timing}}
+			     <div class = "alert alert-danger" alert-dismissable style = "border-radius:4px;"> 
+				    
+					     <p><button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true"><i class = "lnr lnr-cross-circle"></i></button>
+				         <i class= "lnr lnr-warning"></i> Last Attempt. If you fail, Try again after <strong>2</strong> Minutes. <strong>TIME:</strong> <span id="output"></p>
+					
+				 </div>
+			 {{/if}}
+			 
+						<form action="/signin" method="post">
+							<input type="email" class="user" name="username" placeholder="Enter email" required="">
+							<input type="password" name="password" class="lock" placeholder="Password" required="">
+							<div class="forgot-grid">
+								<label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Remember me</label>
+								<div class="clearfix"> </div>
+							</div>
+							<input type = "hidden" name = "_csrf" value = "{{csrfToken}}">
+							<input type="submit" name="Sign In" value="Sign In">
+							<div class="registration">
+								Don't have an account ?
+								<a class="" href="/signup">
+									Create an account
+								</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div> 

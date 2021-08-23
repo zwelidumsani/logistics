@@ -1,0 +1,52 @@
+<div class="main-page signup-page" style = "margin-top: 90px; margin-bottom:100px">
+				<h2 class="title1">Sign Up</h2>
+				<div class="sign-up-row widget-shadow">
+				
+				 {{#if hasErrors}}
+			     <div class = "alert alert-danger" alert-dismissable style = "border-radius:4px;"> 
+				     {{#each messages}}
+					     <p><button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true"><i class = "lnr lnr-cross-circle"></i></button>
+				         <i class= "lnr lnr-warning"></i> {{this}}.</p>
+					 {{/each}}
+				 </div> 
+			 {{/if}} 
+			
+			{{#if unmatchedPasswords}}
+				<div class = "alert alert-danger" alert-dismissable style = "border-radius:4px;"> 
+					<p><button type = "button" class = "close" data-dismiss = "alert" aria-hidden = "true"><i class = "lnr lnr-cross-circle"></i></button>
+					<i class= "lnr lnr-warning"></i> Passwords do <strong>NOT</strong> match!</p>
+				</div>
+			{{/if}}	
+				
+				
+					<h5>Personal Information :</h5>
+				<form action="/signup" method="post">
+					<div class="sign-u">
+								<input type="email" name="username" placeholder="Email" required="">
+						<div class="clearfix"> </div>
+					</div>
+					<div class="sign-u">
+								<input type="password" name = "password" placeholder="Password" required="">
+						<div class="clearfix"> </div>
+					</div>
+					
+					<div class="sign-u">
+								<input type="password" name = "passwordTwo" placeholder = "Confirm password" required="">
+						<div class="clearfix"> </div>
+					</div>
+
+				
+				     <input type = "hidden" name = "_csrf" value = "{{csrfToken}}">
+					<div class="sub_home">
+							<input type="submit" value="Submit">
+						<div class="clearfix"> </div>
+					</div>
+					<div class="registration">
+						Already Registered.
+						<a class="" href="/login">
+							Login
+						</a>
+					</div>
+				</form>
+				</div>
+</div>

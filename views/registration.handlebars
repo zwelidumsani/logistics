@@ -1,0 +1,75 @@
+<div id="page-wrapper">
+	<div class="main-page">
+			<div class="forms">
+				<h2 class="title1">Ragistration Form</h2>
+				<div class="form-grids row widget-shadow" data-example-id="basic-forms"> 
+					<div class=" form-grids row form-grids-right">
+						<div class="widget-shadow " data-example-id="basic-forms"> 
+							<div class="form-title">
+								<h4>Horizontal form :</h4>
+							</div>
+							<div class="form-body">
+							
+							     {{#if companyInfoSaved}}
+								 <!--
+			                        <div class="alert alert-success" role="alert">
+						                  <strong>Oops!</strong> Somthing went wrong!
+					                 </div>
+								 -->	 
+			                     {{else}}
+								     <div class="alert alert-warning" role="alert">
+						                
+										  <strong>Success! </strong>Company info saved successfully.
+					                 </div>
+							     {{/if}}  
+							
+							
+								<form action="/registration" method="post" class="form-horizontal">
+     								 <div class="form-group">
+								         <label for="inputEmail3" class="col-sm-2 control-label">Company</label> 
+									         <div class="col-sm-9"> 
+										         <input type="text" class="form-control" name = "companyName" id="inputEmail3" placeholder="Company name"> 
+										     </div>
+									 </div>
+									 <div class="form-group"> 
+									     <label for="emailaddress" class="col-sm-2 control-label">Email</label> 
+										     <div class="col-sm-9"> 
+											     <input type="email" class="form-control" name = "companyEmail" id="email" placeholder="Conpany email"> 
+											 </div> 
+									 </div> 
+									 <div class="form-group"> 
+									     <label for="phoneNumber" class="col-sm-2 control-label">Phone</label> 
+										     <div class="col-sm-9"> 
+											     <input type="text" class="form-control" name = "companyPhone" id="phone" placeholder="Company phone"> 
+											 </div> 
+									 </div> 
+									 <div class="form-group"> 
+									     <label for="streetName" class="col-sm-2 control-label">Street</label> 
+										     <div class="col-sm-9"> 
+											     <input type="text" class="form-control" name = "companyStreet" id="town" placeholder="Street name"> 
+											 </div> 
+									 </div> 
+									  <div class="form-group"> 
+									     <label for="town" class="col-sm-2 control-label">Town</label> 
+										     <div class="col-sm-9"> 
+											     <input type="text" class="form-control" name = "companyTown" id="town" placeholder="Town"> 
+											 </div> 
+									 </div> 
+									 <div class="form-group"> 
+									     <label for="country" class="col-sm-2 control-label">Country</label> 
+										     <div class="col-sm-9"> 
+											     <input type="text" class="form-control" name = "companyCountry" id="Country" placeholder="Country"> 
+											 </div> 
+									 </div> 
+									  <input type = "hidden" name = "_csrf" value = "{{csrfToken}}">
+									     <div class="col-sm-offset-2">
+     										 <button type="submit" class="btn btn-default">Sign in</button>
+										 </div> 
+								</form> 
+							</div>
+						</div>
+					</div>
+		         </div>
+			</div> 
+		</div>			
+</div>			
