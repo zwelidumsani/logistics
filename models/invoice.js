@@ -3,12 +3,13 @@ var Schema = mongoose.Schema;
 
 var schema = new Schema({
 	companyName:{type: Schema.Types.ObjectId, ref: 'Company'},
-	user:{type: Schema.Types.ObjectId, ref: 'User'},
 	invoicePath:{type: String, required: true,trim: true},
-	invoiceNumber:{type: String, required: true, trim: true},
-	serviceNumber:{type: String, required: true, trim: true},
-	date: {type: Date, default: Date.now },
-});
+	service:{type: String, required: true, trim: true},
+	weight:{type: String, required: true, trim: true},
+	price:{type: String, required: true, trim: true},
+	destination:{type: String, required: true, trim: true},
+	createdAt: {type: String, required: true, trim: true}
+    });
 
 module.exports = mongoose.model('Invoice', schema);
  

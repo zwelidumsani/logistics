@@ -875,6 +875,7 @@ ul.dropdown-menu.drp-mnu li {
 }
 /*---footer---*/
 .footer {
+	
     background: #fff;
     padding: 1em;
     width: 100%;
@@ -993,6 +994,11 @@ h4.title {
     text-transform: uppercase;
 }
 /*--//charts--*/
+.grid_3 grid_4{
+	 
+}
+
+
 .widget-shadow {
     background-color: #fff;
     box-shadow: 0 -1px 3px rgba(0,0,0,.12),0 1px 2px rgba(0,0,0,.24);
@@ -1286,8 +1292,9 @@ td.head {
   font-size: 1.2em !important;
 }
 /*--Typography--*/
-h3.hdg {
+h4.hdg {
     font-size: 2em;
+	font-weight: 600;
 }
 .show-grid [class^=col-] {
     background: #fff;

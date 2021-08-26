@@ -1,0 +1,76 @@
+<div id="page-wrapper">
+	<div class="main-page">
+			<div class="forms">
+				<h2 class="title1">Create invoice</h2>
+				<div class="form-grids row widget-shadow" data-example-id="basic-forms"> 
+					<div class=" form-grids row form-grids-right">
+						<div class="widget-shadow " data-example-id="basic-forms"> 
+							<div class="form-title">
+								<h4>Horizontal form :</h4>
+							</div>
+							<div class="form-body">
+							      {{#if invoiceSaved}}
+								 <!--
+			                        <div class="alert alert-success" role="alert">
+						                  <strong>Oops!</strong> Somthing went wrong!
+					                 </div>
+								 -->	 
+			                     {{else}}
+								     <div class="alert alert-success" role="alert">
+										  <strong>Success! </strong>Invoice created successfully.
+					                 </div>
+							     {{/if}} 
+							
+								<form action="/invoice" method="post" class="form-horizontal">
+								     <div class="form-group">
+									     <label for="selector1" class="col-sm-2 control-label">Company name</label>
+									     <div class="col-sm-8" >
+											 <select name="company" id="selector1"  class="form-control1">
+												 {{#each companies}}
+												 <option>
+													 {{this._id}} 
+												 </option>
+												  
+												 {{/each}}
+											 </select>
+									     </div>
+								     </div>
+     								<div class="form-group">
+									     <label for="cargoWeight" class="col-sm-2 control-label">Cargo weight</label>
+									     <div class="col-sm-8">
+											 <select name="service" id="selector1" class="form-control1">
+												 <option>Inland Freight</option>
+												 <option>Air Freight</option>
+											 </select>
+									     </div>
+								     </div>
+									<div class="form-group">
+									     <label for="cargoWeight" class="col-sm-2 control-label">Cargo weight</label>
+									     <div class="col-sm-8">
+											 <select name="weight" id="selector1" class="form-control1">
+												 <option>1kg</option>
+												 <option>2kg</option>
+												 <option>3kg</option>
+												 <option>4kg</option>
+											 </select>
+									     </div>
+								     </div>
+									 <div class="form-group"> 
+									     <label for="destination" class="col-sm-2 control-label">Destination</label> 
+										     <div class="col-sm-9"> 
+											     <input type="text" class="form-control" name = "destination" id="phone" placeholder="Company phone"> 
+											 </div> 
+									 </div> 
+								
+									  <input type = "hidden" name = "_csrf" value = "{{csrfToken}}">
+									     <div class="col-sm-offset-2">
+     										 <button type="submit" class="btn btn-default">Submit</button>
+										 </div> 
+								</form> 
+							</div>
+						</div>
+					</div>
+		         </div>
+			</div> 
+		</div>			
+</div>			
